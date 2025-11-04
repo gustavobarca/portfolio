@@ -1,9 +1,0 @@
-.wrapper{
-    width: max-content;
-}
-
-.xcenter{
-    position: relative;
-    left:50%;
-    transform: translateX(-50%);
-}

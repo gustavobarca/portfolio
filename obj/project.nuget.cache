@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "F0LUcWWgCC0=",
+  "success": true,
+  "projectFilePath": "/home/gustavo/Documents/Projects/portfolio/Portfolio.csproj",
+  "expectedPackageFiles": [
+    "/home/gustavo/.nuget/packages/scriban/6.5.0/scriban.6.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
