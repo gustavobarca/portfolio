@@ -10,9 +10,7 @@ builder.Services.AddScoped<Page>();
 
 var app = builder.Build();
 
-app.MapGet("/", (Page page) =>
-{
-    return page.Html("home");
-});
+app.MapGet("/", (Page page) => page.Html("home"));
+app.UseStaticFiles();
 
 app.Run();
