@@ -13,7 +13,7 @@ main {
   width: 1080px;
 }
 
-header {
+main > header {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -22,25 +22,25 @@ header {
   margin-bottom: 100px;
 }
 
-header h1 {
+main > header h1 {
   font-size: 36px;
 }
 
-header h3 {
+main > header h3 {
   margin-top: 10px;
   margin-bottom: 12px;
   font-weight: 500;
   color: #909090;
 }
 
-header img {
+main > header img {
   width: 266px;
   height: 266px;
   border-radius: 266px;
   margin-bottom: 36px;
 }
 
-header p {
+main > header p {
   max-width: 620px;
   margin-top: 12px;
 }
@@ -60,6 +60,38 @@ header p {
 
 section {
   margin-top: 50px;
+}
+
+.education {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.education-item {
+  background-color: white;
+  padding: 20px 24px;
+  border-radius: 24px;
+}
+
+.education-item h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #000;
+}
+
+.education-meta {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.education-detail {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.8;
 }
 
 #projects {
@@ -83,4 +115,101 @@ section {
   gap: 12px;
   display: flex;
   flex-direction: column;
+}
+
+.experiences {
+  margin: 0 auto;
+  padding-top: 32px;
+}
+
+.job {
+  margin-bottom: 60px;
+}
+
+.job:last-child {
+  margin-bottom: 0;
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.job-header > header h3 {
+  color: #ff9500;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.job-header > header p {
+  color: #666;
+  font-size: 14px;
+  max-width: 250px;
+}
+
+.job-info {
+  flex: 1;
+  margin-left: 60px;
+}
+
+.position h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #000;
+}
+
+.period {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.description {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.skill {
+  background-color: transparent;
+  border: 1px solid #ddd;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 30px 20px;
+  }
+
+  .job-header {
+    flex-direction: column;
+  }
+
+  .job-info {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .job-header > header p {
+    max-width: 100%;
+  }
 }
