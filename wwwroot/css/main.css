@@ -41,6 +41,7 @@
 * {
   font-family: "JetBrains Mono", monospace;
   margin: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -240,7 +241,23 @@ section {
 
 @media (max-width: 768px) {
   main {
-    padding: 30px 20px;
+    width: 100%;
+    padding: 30px 32px;
+  }
+
+  main > header {
+    margin-top: 80px;
+    margin-bottom: 60px;
+  }
+
+  main > header img {
+    width: 180px;
+    height: 180px;
+    border-radius: 180px;
+  }
+
+  #projects {
+    padding-bottom: 8px;
   }
 
   .job-header {
@@ -258,5 +275,34 @@ section {
 
   .job-header > header p {
     max-width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  main {
+    width: 100%;
+    padding: 40px 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  #projects {
+    gap: 12px;
+  }
+
+  .project {
+    width: 200px;
+  }
+
+  .job {
+    margin-bottom: 40px;
+  }
+
+  .position h2 {
+    font-size: 18px;
+  }
+
+  .education-item {
+    padding: 16px 18px;
   }
 }
