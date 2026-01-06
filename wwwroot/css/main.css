@@ -1,5 +1,45 @@
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/JetBrainsMono-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/JetBrainsMono-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/JetBrainsMono-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/JetBrainsMono-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/JetBrainsMono-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
-  font-family: monospace;
+  font-family: "JetBrains Mono", monospace;
   margin: 0;
 }
 
@@ -18,18 +58,20 @@ main > header {
   flex-direction: column;
   text-align: center;
   align-items: center;
-  margin-top: 200px;
-  margin-bottom: 100px;
+  margin-top: 150px;
+  margin-bottom: 150px;
 }
 
 main > header h1 {
   font-size: 36px;
+  font-weight: 700;
 }
 
 main > header h3 {
   margin-top: 10px;
-  margin-bottom: 12px;
+  margin-bottom: 22px;
   font-weight: 500;
+  font-size: 16px;
   color: #909090;
 }
 
@@ -117,6 +159,10 @@ section {
   flex-direction: column;
 }
 
+.projects-content p {
+  font-size: 12px;
+}
+
 .experiences {
   margin: 0 auto;
   padding-top: 32px;
@@ -178,15 +224,15 @@ section {
 .skills {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 12px;
 }
 
 .skill {
-  background-color: transparent;
-  border: 1px solid #ddd;
-  padding: 8px 16px;
-  border-radius: 4px;
-  font-size: 14px;
+  background-color: #EFEFEF;
+  border: none;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
   font-weight: 500;
   color: #333;
 }
