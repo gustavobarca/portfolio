@@ -153,6 +153,19 @@ section {
   border-radius: 24px;
   gap: 22px;
   background-color: white;
+  text-decoration: none;
+}
+
+.project:hover h3 {
+  opacity: 0.8;
+}
+
+.project h3 {
+  color: black;
+}
+
+.project p {
+  color: #666;
 }
 
 .projects-content {
