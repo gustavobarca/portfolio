@@ -42,6 +42,10 @@
   --color-primary: #c27e59;
 }
 
+a {
+  color: var(--color-primary)
+}
+
 * {
   font-family: "JetBrains Mono", monospace;
   margin: 0;
