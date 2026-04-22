@@ -40,14 +40,15 @@
 
 :root {
   --color-primary: #e26d00;
+  --font-family: "JetBrains Mono", monospace;
 }
 
 a {
-  color: var(--color-primary)
+  color: #000;
 }
 
 * {
-  font-family: "JetBrains Mono", monospace;
+  font-family: var(--font-family);
   margin: 0;
   box-sizing: border-box;
 }
@@ -61,7 +62,7 @@ body {
 }
 
 main {
-  width: 1080px;
+  width: 1200px;
 }
 
 main > header {
@@ -172,6 +173,15 @@ section h1 {
   text-decoration: none;
 }
 
+.project .projects-content {
+  flex: 1;
+}
+
+.project .projects-content .skills {
+  margin-top: auto;
+  padding-top: 12px;
+}
+
 .project:hover h3 {
   opacity: 0.8;
 }
@@ -188,10 +198,46 @@ section h1 {
   gap: 12px;
   display: flex;
   flex-direction: column;
+  flex: 1;
 }
 
 .projects-content p {
   font-size: 12px;
+}
+
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.expertise-card {
+  background-color: white;
+  padding: 20px 24px;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.expertise-card-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #000;
+}
+
+.expertise-card-title h3 {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.expertise-card > p {
+  color: #676767;
+  font-size: 12px;
+  line-height: 1.8;
+  flex: 1;
 }
 
 .experiences {
@@ -219,6 +265,16 @@ section h1 {
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.company-favicon {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  flex-shrink: 0;
 }
 
 .job-header > header p {
@@ -312,9 +368,17 @@ section h1 {
     width: 100%;
     padding: 40px 32px;
   }
+
+  .expertise-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 600px) {
+  .expertise-grid {
+    grid-template-columns: 1fr;
+  }
+
   #projects {
     gap: 12px;
   }
@@ -394,6 +458,18 @@ footer {
   .project {
     background-color: white;
     border: 1px solid #ddd;
+  }
+
+  .expertise-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10pt;
+  }
+
+  .expertise-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 
   #projects {
