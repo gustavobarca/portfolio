@@ -509,12 +509,23 @@ section h1 {
     grid-template-columns: 1fr;
   }
 
+  #contact {
+    padding-top: 60px;
+    padding-bottom: 100px;
+  }
+
+  .contact-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
   #projects {
+    flex-direction: column;
     gap: 12px;
   }
 
   .project {
-    width: 200px;
+    width: 100%;
   }
 
   .job {
