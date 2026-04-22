@@ -4,11 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Gustavo Barca | CTO & Software Architect</title>
     <link href="/css/main.css" rel="stylesheet">
 </head>
 
 <body>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+        <svg id="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+        <svg id="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+    </button>
+
+    <script>
+        (function () {
+            const html = document.documentElement;
+            const stored = localStorage.getItem('theme');
+            if (stored === 'dark') html.setAttribute('data-theme', 'dark');
+
+            function applyIcons(isDark) {
+                document.getElementById('icon-moon').style.display = isDark ? 'none' : '';
+                document.getElementById('icon-sun').style.display = isDark ? '' : 'none';
+            }
+
+            document.addEventListener('DOMContentLoaded', function () {
+                applyIcons(html.getAttribute('data-theme') === 'dark');
+                document.getElementById('theme-toggle').addEventListener('click', function () {
+                    const isDark = html.getAttribute('data-theme') === 'dark';
+                    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+                    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+                    applyIcons(!isDark);
+                });
+            });
+        })();
+    </script>
+
     <main>
         <header>
             <img src="/images/profile.jpg" />
@@ -37,10 +73,10 @@
             <h1>Projects</h1>
             <div id="projects">
                 <a class="project" href="https://github.com/gustavobarca/lithe">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
                         <path
                             d="M9.00937 1.92197C9.62812 1.56572 10.3906 1.56572 11.0094 1.92197L16.5063 5.09385C17.125 5.4501 17.5063 6.1126 17.5063 6.8251V13.1688C17.5063 13.8845 17.125 14.5438 16.5063 14.9001L11.0094 18.0782C10.7052 18.2533 10.3603 18.3454 10.0094 18.3454C9.6584 18.3454 9.31358 18.2533 9.00937 18.0782L3.51562 14.9063C2.89688 14.5501 2.51562 13.8876 2.51562 13.1751V6.83135C2.51562 6.11572 2.89688 5.45635 3.51562 5.1001L9.00937 1.92197ZM15.5031 13.172V7.98135L11.0094 10.5751V15.7657L15.5031 13.172Z"
-                            fill="black" />
+                            fill="currentColor" />
                     </svg>
                     <div class="projects-content">
                         <h3>lithe</h3>
@@ -51,14 +87,14 @@
                     </div>
                 </a>
                 <a class="project" href="https://github.com/gustavobarca/app-analytics">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
                         <path
                             d="M9.00937 1.92197C9.62812 1.56572 10.3906 1.56572 11.0094 1.92197L16.5063 5.09385C17.125 5.4501 17.5063 6.1126 17.5063 6.8251V13.1688C17.5063 13.8845 17.125 14.5438 16.5063 14.9001L11.0094 18.0782C10.7052 18.2533 10.3603 18.3454 10.0094 18.3454C9.6584 18.3454 9.31358 18.2533 9.00937 18.0782L3.51562 14.9063C2.89688 14.5501 2.51562 13.8876 2.51562 13.1751V6.83135C2.51562 6.11572 2.89688 5.45635 3.51562 5.1001L9.00937 1.92197ZM15.5031 13.172V7.98135L11.0094 10.5751V15.7657L15.5031 13.172Z"
-                            fill="black" />
+                            fill="currentColor" />
                     </svg>
                     <div class="projects-content">
                         <h3>app-analytics</h3>
-                        <p>A plug-in-play error monitoring for dotnet applications.</p>
+                        <p>A plug-in-play error monitoring for web applications.</p>
                         <div class="skills">
                             <span class="skill">C#</span>
                             <span class="skill">Rust</span>
@@ -85,10 +121,9 @@
                         <span class="skill">DDD</span>
                         <span class="skill">Clean Architecture</span>
                         <span class="skill">Microservices</span>
-                        <span class="skill">Distributed Systems</span>
                         <span class="skill">Design Patterns</span>
-                        <span class="skill">Feature Flags</span>
-                        <span class="skill">Test Pyramid</span>
+                        <span class="skill">Testing</span>
+                        <span class="skill">Distributed Systems</span>
                     </div>
                 </article>
 
@@ -106,13 +141,12 @@
                     <div class="skills">
                         <span class="skill">Agile</span>
                         <span class="skill">Scrum</span>
-                        <span class="skill">Extreme Programming (XP)</span>
-                        <span class="skill">Kanban</span>
+                        <span class="skill">XP</span>
                         <span class="skill">Waterfall</span>
-                        <span class="skill">Trunk-Based Development</span>
                         <span class="skill">Gitflow</span>
-                        <span class="skill">KPIs</span>
+                        <span class="skill">KPI</span>
                         <span class="skill">OGSM</span>
+                        <span class="skill">Trunk-Based Development</span>
                     </div>
                 </article>
 
@@ -400,7 +434,7 @@
     </main>
 
     <footer>
-        <p>©2026 · Built with .NET and Scriban. Developed from sratch by Gustavo Barca.</p>
+        <p>©2026 · Built with .NET and Scriban. Developed from scratch by Gustavo Barca.</p>
     </footer>
 </body>
 
