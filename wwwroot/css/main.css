@@ -588,6 +588,9 @@ footer {
   .project {
     background-color: white;
     border: 1px solid #ddd;
+    flex: 1;
+    width: auto;
+    min-width: 0;
   }
 
   .expertise-grid {
@@ -604,7 +607,7 @@ footer {
   }
 
   #projects {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
   }
 
   #theme-toggle {
